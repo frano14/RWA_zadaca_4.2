@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upravljanje Žaruljom</title>
+    <style>
+      #zarulja {
+        cursor: pointer;
+        user-select: none;
+        width: 200px;
+        height: auto;
+        transition: transform 0.3s;
+      }
+
+      #zarulja:hover {
+        transform: scale(1.1); /* Primjer efekta povećanja prilikom hovera */
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      id="zarulja"
+      src="zarulja_off_2.png"
+      alt="Žarulja"
+      onclick="promijeniStanje()"
+    />
+
+    <script>
+      function promijeniStanje() {
+        var zaruljaElement = document.getElementById("zarulja");
+
+        if (zaruljaElement.src.includes("on")) {
+          zaruljaElement.src = "zarulja_off_2.png";
+        } else {
+          zaruljaElement.src = "zarulja_on_2.png";
+        }
+      }
+    </script>
+  </body>
+</html>

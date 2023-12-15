@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadatak 4</title>
+  </head>
+  <body>
+    <form>
+      <label for="ocjena">Unesite ocjenu (1-5): </label>
+      <input
+        type="text"
+        id="ocjena"
+        name="ocjena"
+        pattern="[1-5]"
+        title="Ocjena mora biti od 1 do 5"
+        required
+      />
+      <br />
+      <button type="button" onclick="prikaziOcjenjivanje()">
+        Provjeri ocjenu
+      </button>
+    </form>
+
+    <p id="rezultat"></p>
+
+    <script>
+      function prikaziOcjenjivanje() {
+        var ocjenaInput = document.getElementById("ocjena").value;
+        var rezultatParagraf = document.getElementById("rezultat");
+
+        switch (ocjenaInput) {
+          case "1":
+            rezultatParagraf.innerText = "Nedovoljan";
+            break;
+          case "2":
+            rezultatParagraf.innerText = "Dovoljan";
+            break;
+          case "3":
+            rezultatParagraf.innerText = "Dobar";
+            break;
+          case "4":
+            rezultatParagraf.innerText = "Vrlo dobar";
+            break;
+          case "5":
+            rezultatParagraf.innerText = "Odličan";
+            break;
+          default:
+            rezultatParagraf.innerText = "Molimo unesite ocjenu od 1 do 5.";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

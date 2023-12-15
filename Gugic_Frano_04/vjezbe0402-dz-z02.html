@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadatak 2</title>
+  </head>
+  <body>
+    <h1>Promjena Pozadine</h1>
+
+    <button onclick="promijeniPozadinu()">Promijeni pozadinu</button>
+    <p id="trenutnaBoja"></p>
+
+    <script>
+      function promijeniPozadinu() {
+        var novaBoja = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        document.body.style.backgroundColor = novaBoja;
+
+        document.getElementById("trenutnaBoja").innerText =
+          "Trenutna boja: " + novaBoja;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On-line Kalkulator</title>
+  </head>
+  <body>
+    <label for="prviBroj">Prvi broj: </label>
+    <input type="text" id="prviBroj" />
+    <br />
+
+    <label for="operacija">Odaberi operaciju: </label>
+    <select id="operacija">
+      <option value="zbrajanje">Zbrajanje</option>
+      <option value="oduzimanje">Oduzimanje</option>
+      <option value="mnozenje">Množenje</option>
+      <option value="dijeljenje">Dijeljenje</option>
+      <option value="sinus">Sinus</option>
+      <option value="kosinus">Kosinus</option>
+      <option value="tangens">Tangens</option>
+      <option value="logaritam">Logaritam</option>
+      <option value="logaritamBaza10">Logaritam po bazi 10</option>
+      <option value="kvadriranje">Kvadriranje</option>
+      <option value="kubiranje">Kubiranje</option>
+      <option value="potenciranje">Potenciranje</option>
+    </select>
+    <br />
+
+    <label for="drugiBroj">Drugi broj: </label>
+    <input type="text" id="drugiBroj" />
+    <br />
+
+    <button onclick="izracunaj()">Izračunaj</button>
+
+    <script>
+      function izracunaj() {
+        var prviBroj = parseFloat(document.getElementById("prviBroj").value);
+        var drugiBroj = parseFloat(document.getElementById("drugiBroj").value);
+        var operacija = document.getElementById("operacija").value;
+
+        switch (operacija) {
+          case "zbrajanje":
+            alert("Rezultat: " + (prviBroj + drugiBroj));
+            break;
+          case "oduzimanje":
+            alert("Rezultat: " + (prviBroj - drugiBroj));
+            break;
+          case "mnozenje":
+            alert("Rezultat: " + prviBroj * drugiBroj);
+            break;
+          case "dijeljenje":
+            if (drugiBroj !== 0) {
+              alert("Rezultat: " + prviBroj / drugiBroj);
+            } else {
+              alert("Dijeljenje s nulom nije definirano.");
+            }
+            break;
+          case "sinus":
+            alert("Rezultat: " + Math.sin(prviBroj));
+            break;
+          case "kosinus":
+            alert("Rezultat: " + Math.cos(prviBroj));
+            break;
+          case "tangens":
+            alert("Rezultat: " + Math.tan(prviBroj));
+            break;
+          case "logaritam":
+            alert("Rezultat: " + Math.log(prviBroj));
+            break;
+          case "logaritamBaza10":
+            alert("Rezultat: " + Math.log10(prviBroj));
+            break;
+          case "kvadriranje":
+            alert("Rezultat: " + Math.pow(prviBroj, 2));
+            break;
+          case "kubiranje":
+            alert("Rezultat: " + Math.pow(prviBroj, 3));
+            break;
+          case "potenciranje":
+            alert("Rezultat: " + Math.pow(prviBroj, drugiBroj));
+            break;
+          default:
+            alert("Nepoznata operacija.");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

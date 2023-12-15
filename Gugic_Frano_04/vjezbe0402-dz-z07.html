@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadatak 7</title>
+  </head>
+  <body>
+    <form>
+      <label for="datumRodjenja">Unesite datum rođenja: </label>
+      <input type="date" id="datumRodjenja" name="datumRodjenja" required />
+      <br />
+      <button type="button" onclick="izracunajGodine()">Izračunaj</button>
+    </form>
+
+    <script>
+      function izracunajGodine() {
+        var datumRodjenja = new Date(
+          document.getElementById("datumRodjenja").value
+        );
+        var danas = new Date();
+
+        var razlika = danas.getFullYear() - datumRodjenja.getFullYear();
+
+        if (
+          danas.getMonth() < datumRodjenja.getMonth() ||
+          (danas.getMonth() === datumRodjenja.getMonth() &&
+            danas.getDate() < datumRodjenja.getDate())
+        ) {
+          razlika--;
+        }
+
+        alert("Imate " + razlika + " godina.");
+      }
+    </script>
+  </body>
+</html>

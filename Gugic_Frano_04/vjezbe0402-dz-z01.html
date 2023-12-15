@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadatak 1</title>
+  </head>
+  <body>
+    <script>
+      function kalk() {
+        var unos = prompt("Unesite brojeve");
+        var brojevi = unos.split(",").map(function (num) {
+          return parseInt(num.trim());
+        });
+
+        var art =
+          brojevi.reduce(function (sum, num) {
+            return sum + num;
+          }, 0) / brojevi.length;
+
+        // Calculate the geometric mean
+        var geo = Math.pow(
+          brojevi.reduce(function (product, num) {
+            return product * num;
+          }, 1),
+          1 / brojevi.length
+        );
+
+        // Display the results in the HTML document
+        document.getElementById("result").innerHTML =
+          "Artimeticka sredina: " +
+          art.toFixed(2) +
+          "<br>Geometriska sredina: " +
+          geo.toFixed(2);
+      }
+
+      // Call the function when the page is loaded
+      window.onload = kalk;
+    </script>
+
+    <div id="result"></div>
+  </body>
+</html>

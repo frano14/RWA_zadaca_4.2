@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadatak 05</title>
+  </head>
+  <body>
+    <form>
+      <label for="registracija"
+        >Unesite registracijsku oznaku (npr. X000-XX-000):
+      </label>
+      <input type="text" id="registracija" name="registracija" required />
+      <br />
+      <button type="button" onclick="validirajRegistraciju()">
+        Validiraj registraciju
+      </button>
+    </form>
+
+    <script>
+      function validirajRegistraciju() {
+        var registracijaInput = document.getElementById("registracija").value;
+        var regex = /^[A-Z]\d{3}-[A-Z]{2}-\d{3}$/;
+        if (regex.test(registracijaInput)) {
+          alert("Ispravan format registracijske oznake.");
+        } else {
+          alert(
+            "Neispravan format registracijske oznake. Molimo unesite ispravan format."
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
